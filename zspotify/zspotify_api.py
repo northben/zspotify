@@ -58,7 +58,7 @@ class ZSpotifyApi:
 
     def init_token(self):
         self.session = Session.Builder().stored_file(stored_credentials=str(self.credentials)).create()
-        self.token = self.session.tokens().get("user-read-email")
+        self.token = self.session.tokens().get("user-library-read")
         self.token_for_saved = self.session.tokens().get("user-library-read")
 
     def login(self, username=None, password=None):
